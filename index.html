@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How do the stories work? - Interaction & Narrative Patterns</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+  <!-- Shared Top Navigation Bar (Fixed and Unchanged) -->
+  <header class="navbar" id="app-navbar">
+    <div class="logo" id="nav-logo" role="button" tabindex="0">
+      <img src="./Frame_13_logo.svg" alt="INxD National Institute of Design" class="nav-logo-img">
+    </div>
+    <nav class="nav-links">
+      <a href="#home" class="nav-item" id="nav-home">Home</a>
+      <a href="#interactive" class="nav-item tab-interactive active" id="nav-interactive">
+        <span>Interactive Patterns</span>
+        <div class="tab-indicator indicator-green"></div>
+      </a>
+      <a href="#narrative" class="nav-item tab-narrative" id="nav-narrative">
+        <span>Narrative Patterns</span>
+        <div class="tab-indicator indicator-peach"></div>
+      </a>
+      <span class="nav-divider">|</span>
+      <a href="#sketchnotes" class="nav-item tab-sketchnotes" id="nav-sketchnotes">
+        <span>Sketchnotes</span>
+        <div class="tab-indicator indicator-pink"></div>
+      </a>
+    </nav>
+  </header>
+
+  <!-- VIEW 1: HERO SECTION (Exact Figma Node 96:2 Spec) -->
+  <main id="view-hero" class="page-view hero-redesign-view">
+    <div class="hero-redesign-container">
+      
+      <!-- Top Left Logo Branding -->
+      <div class="hero-brand">
+        <img src="./Frame_13_logo.svg" alt="INxD National Institute of Design" class="hero-logo-img">
+      </div>
+
+      <!-- Hero Main Content Grid -->
+      <div class="hero-grid">
+        
+        <!-- Left Hero Column -->
+        <div class="hero-left-col">
+          <h1 class="hero-main-title">How do the stories work?</h1>
+          <p class="hero-main-desc">
+            An overview of interaction and storytelling techniques used in data narratives.
+          </p>
+          <button class="hero-about-btn" id="hero-about-btn">
+            <span>About us</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Right Hero Feature Cards Column -->
+        <div class="hero-right-col">
+          
+          <!-- Card 1: Interactive Patterns -->
+          <a href="#interactive" class="hero-feature-card card-interactive">
+            <div class="card-icon-circle icon-green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="4" y="4" width="7" height="7" rx="1.5"/>
+                <rect x="13" y="4" width="7" height="7" rx="1.5"/>
+                <rect x="4" y="13" width="7" height="7" rx="1.5"/>
+                <path d="M17 13l4 4m0 0l-4 4m4-4H13"/>
+              </svg>
+            </div>
+            <div class="card-text-group">
+              <h2 class="hero-card-title">Interactive Patterns</h2>
+              <p class="hero-card-subtitle">Exploring dynamic and engaging interactive patterns.</p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Card 2: Narrative Patterns -->
+          <a href="#narrative" class="hero-feature-card card-narrative">
+            <div class="card-icon-circle icon-blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <line x1="10" y1="9" x2="8" y2="9"/>
+              </svg>
+            </div>
+            <div class="card-text-group">
+              <h2 class="hero-card-title">Narrative Patterns</h2>
+              <p class="hero-card-subtitle">Patterns shaping compelling narrative experiences.</p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- Card 3: Sketchnotes -->
+          <a href="#sketchnotes" class="hero-feature-card card-sketchnotes">
+            <div class="card-icon-circle icon-pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                <path d="M2 2l7.586 7.586"/>
+                <circle cx="11" cy="11" r="2"/>
+              </svg>
+            </div>
+            <div class="card-text-group">
+              <h2 class="hero-card-title">Sketchnotes</h2>
+              <p class="hero-card-subtitle">Visual note-taking for creative storytelling.</p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- VIEW 2: INTERACTIVE / NARRATIVE PATTERNS PAGE (Figma Node 97:906 Low-Fidelity Layout) -->
+  <main id="view-patterns" class="page-view">
+    <div class="patterns-page-container">
+      
+      <!-- Page Header Row (Title + Description & Search Bar) -->
+      <div class="patterns-page-header">
+        <div class="header-text-group">
+          <h1 class="patterns-title" id="patterns-page-title">Interactive Patterns</h1>
+          <p class="patterns-subtitle" id="patterns-page-desc">Exploring dynamic and engaging interactive patterns.</p>
+        </div>
+
+        <!-- Search Input Bar (Pill with Search Icon) -->
+        <div class="search-box-pill">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="search-input" placeholder="Search for patterns here..." aria-label="Search for patterns here">
+        </div>
+      </div>
+
+      <!-- Filter Controls Row (Hamburger Icon + All Button + Active Filter Tag Pill) -->
+      <div class="patterns-filter-bar">
+        <!-- Hamburger Button to trigger Left Sidebar Drawer (Figma Node 115:594) -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open filter sidebar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <line x1="4" y1="6" x2="20" y2="6"></line>
+            <line x1="4" y1="12" x2="20" y2="12"></line>
+            <line x1="4" y1="18" x2="20" y2="18"></line>
+          </svg>
+        </button>
+
+        <button class="filter-btn-all" id="tag-all">All</button>
+        
+        <!-- Active Tag Filter Pill (e.g. "Scroll-Driven Storytelling ×") -->
+        <div class="active-tag-pill" id="active-tag-pill" style="display: none;">
+          <span id="active-tag-name">Scroll-Driven Storytelling</span>
+          <button class="tag-close-btn" id="tag-close-btn" aria-label="Clear filter">&times;</button>
+        </div>
+      </div>
+
+      <!-- 3-Column Pattern Cards Grid (Matching Low-Fidelity Frame 97:906) -->
+      <div class="patterns-grid-3col" id="patterns-grid">
+        <!-- Dynamically populated by main.js -->
+      </div>
+
+    </div>
+
+    <!-- LEFT SIDEBAR DRAWER (Figma Node 115:594) -->
+    <div class="sidebar-drawer-backdrop" id="drawer-backdrop"></div>
+    <aside class="sidebar-drawer" id="sidebar-drawer" aria-label="Pattern category filters">
+      <div class="drawer-header">
+        <h2 class="drawer-title" id="drawer-title">Scroll-Driven Storytelling</h2>
+        <button class="drawer-close-btn" id="drawer-close-btn" aria-label="Close sidebar">&times;</button>
+      </div>
+      <div class="drawer-body">
+        <ul class="drawer-category-list" id="drawer-category-list">
+          <!-- Dynamically populated radio options by main.js -->
+        </ul>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- ABOUT US MODAL (Figma Node 109:5184) -->
+  <div id="about-modal" class="modal-backdrop">
+    <div class="modal-container" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h2 class="modal-title">Welcome to InfoD 25 😊</h2>
+      <div class="modal-img-wrapper">
+        <img src="./team_photo.jpg" alt="InfoD 25 Team" class="modal-team-img">
+      </div>
+      <p class="modal-description">
+        Discover our dynamic team of 18 talented information designers at NID Bangalore, each bringing creativity and passion to transform complex data into compelling stories. Together, we blend innovation and artistry to craft narratives that inspire and inform.
+      </p>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

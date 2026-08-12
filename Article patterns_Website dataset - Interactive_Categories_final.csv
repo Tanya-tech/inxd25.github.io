@@ -1,0 +1,63 @@
+#,Broader Category,Narrowed Pattern,Description
+1,Scroll-Driven Storytelling,Sticky Scroll,Visual remains fixed while surrounding narrative content scrolls.
+,,Scroll Sequencing,Scrolling progresses through a series of predefined narrative states.
+,,Scroll Transformation,"Visual elements change, morph, or transform based on scroll position."
+,,Scroll Camera Control,"Scrolling controls the movement or viewpoint of a map, 3D scene, or camera."
+,,Parallax,Different visual layers move at different speeds to create a sense of depth.
+,,Scroll Animation,"Animation progresses, loops, or responds directly to the user's scroll position."
+2,Direct Manipulation,Parameter Slider,User adjusts a continuous variable and immediately sees its effect.
+,,Drag & Relocate,User physically moves an object from one position to another.
+,,Canvas Manipulation,"User directly creates, edits, draws, erases, or modifies elements on a canvas."
+,,Node Manipulation,"User directly activates, moves, connects, or changes individual nodes or elements."
+,,Simulation Control,User directly controls the execution or parameters of a simulated system.
+,,Game-like Manipulation,User performs physical or game-like actions to influence the system or outcome.
+3,Progressive Disclosure,Hover Reveal,Additional information appears when the pointer hovers over an element.
+,,Click Reveal,Additional information is revealed after the user clicks an element.
+,,Tooltip,Small contextual information appears when interacting with a specific element.
+,,Hover Highlight,Hovering emphasizes an element and/or its related information.
+,,Interactive Annotation,Contextual labels or explanations appear through interaction.
+,,Interactive Map Reveal,Hovering or selecting a geographic element reveals additional information.
+4,Comparison & View Switching,Toggle,User switches between two predefined states or views.
+,,Comparison Slider,"User moves a divider to compare two states, images, or datasets."
+,,Segmented Control,User selects one of several predefined views using a set of options.
+,,Tab Switching,User switches between different content or data views.
+,,Side-by-Side Comparison,Multiple states or datasets are displayed simultaneously for comparison.
+,,Dynamic Comparison,The comparison changes dynamically based on the user's selections.
+5,Linked Views,Linked Interaction,An interaction with one element causes another element or view to respond.
+,,Coordinated Views,Multiple visualizations update together to represent the same user action.
+,,Cross-Filtering,Selecting data in one view filters related data across other views.
+,,Bidirectional Linking,Changes or selections in either of two connected views affect the other.
+6,Navigation & Wayfinding,Persistent Navigation,Navigation controls remain available as the user moves through the experience.
+,,Index / Contents,An overview provides access to different sections of the experience.
+,,Menu Navigation,A menu allows users to move between different sections or destinations.
+,,Tab Navigation,Tabs provide direct access to different sections or views.
+,,Step Navigation,User progresses through content one step at a time.
+,,Swipe Navigation,"Swiping moves between screens, panels, or narrative states."
+,,Arrow / Keyboard Navigation,Arrows or keyboard controls allow sequential movement through content.
+,,Hyperlink Exploration,Users follow links to explore related content at their own pace.
+7,"Input, Search & Filtering",Search,User enters a query to find specific information.
+,,Text Input,User enters text that is used to modify or personalize the experience.
+,,Dropdown Selection,User selects one option from a predefined list.
+,,Sorting,User changes the order in which information is displayed.
+,,Filtering,User removes unwanted information to focus on a specific subset.
+,,Personalization,User-provided information changes the content or experience specifically for them.
+,,Layer Filtering,User adds or removes layers to control which information is visible.
+8,Animated State Transitions,Morphing,One visual form smoothly transforms into another while maintaining visual continuity.
+,,Object-Constancy Transition,The same object visually persists while its representation or position changes.
+,,Animated Route,Animation traces movement along a geographic or spatial route.
+,,Animated Flow,"Animation communicates movement, direction, or flow through a system."
+,,Explode / Inspect,A complex object separates or expands to reveal its internal components.
+,,Aggregate → Individual,A grouped representation transitions into its individual elements.
+,,State Transition,Animation communicates a change from one state or condition to another.
+9,Prediction & Feedback,Prediction Prompt,User is asked to predict an outcome before seeing the actual data or result.
+,,User Guess → Data Reveal,User makes a guess and the actual value is subsequently revealed for comparison.
+,,Prediction Drawing,User visually draws or constructs their prediction before seeing the actual result.
+,,Personal Feedback,"System provides feedback based on the user's own input, behaviour, or prediction."
+,,Comparative Feedback,"User's response is compared against another benchmark, dataset, or population."
+,,Reward / Reinforcement,"An interaction produces a reward, acknowledgement, or reinforcing response."
+,,Replay,"User can revisit or replay a previous action, process, or sequence."
+10,Media & Content,Audio Playback,User controls or triggers audio as part of the experience.
+,,Video Playback,User controls or triggers video content.
+,,Static Overview,A non-interactive visual provides an overall summary or orientation.
+,,Banner / Illustration,Static visual content supports the narrative or communicates contextual information.
+11,Remove from Interaction Taxonomy,Circles vs. Hexagons,A visual encoding decision involving shape; it does not describe a user interaction.

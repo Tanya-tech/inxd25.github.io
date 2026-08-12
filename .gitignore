@@ -1,0 +1,8 @@
+node_modules
+.agents/
+scratch/
+.env
+.env.local
+*.crdownload
+*.tmp
+dist
