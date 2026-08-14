@@ -31,6 +31,11 @@
         <span>Sketchnotes</span>
         <div class="tab-indicator indicator-pink"></div>
       </a>
+      <span class="nav-divider">|</span>
+      <a href="#projects" class="nav-item tab-projects" id="nav-projects">
+        <span>Projects</span>
+        <div class="tab-indicator indicator-blue"></div>
+      </a>
     </nav>
   </header>
 
@@ -127,6 +132,24 @@
             </div>
           </a>
 
+          <!-- Card 4: Projects -->
+          <a href="#projects" class="hero-feature-card card-projects">
+            <div class="card-icon-circle icon-amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 7a2 2 0 0 1 2-2h3l2 2h9a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7z"/>
+              </svg>
+            </div>
+            <div class="card-text-group">
+              <h2 class="hero-card-title">Projects</h2>
+              <p class="hero-card-subtitle">Student data narrative projects from the cohort.</p>
+            </div>
+            <div class="card-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </div>
+          </a>
+
         </div>
 
       </div>
@@ -196,6 +219,35 @@
       </div>
     </aside>
 
+  </main>
+
+  <!-- VIEW 3: PROJECTS PAGE (Card Grid, Same Layout Language as Patterns Pages) -->
+  <main id="view-projects" class="page-view">
+    <div class="patterns-page-container">
+
+      <!-- Page Header Row (Title + Description & Search Bar) -->
+      <div class="patterns-page-header">
+        <div class="header-text-group">
+          <h1 class="patterns-title">Projects</h1>
+          <p class="patterns-subtitle">Data narrative projects from the InfoD 25 cohort.</p>
+        </div>
+
+        <!-- Search Input Bar (Pill with Search Icon) -->
+        <div class="search-box-pill">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="projects-search-input" placeholder="Search for projects here..." aria-label="Search for projects here">
+        </div>
+      </div>
+
+      <!-- Simple 3-Column Project Cards Grid -->
+      <div class="projects-grid-3col" id="projects-grid">
+        <!-- Dynamically populated by main.js -->
+      </div>
+
+    </div>
   </main>
 
   <!-- ABOUT US MODAL (Figma Node 109:5184) -->

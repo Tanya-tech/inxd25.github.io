@@ -1,5 +1,6 @@
 import interactiveCsvRaw from './Article patterns_Website dataset - Interactive_Categories_final.csv?raw';
 import narrativeCsvRaw from './Article patterns_Website dataset - Narrative_Categories_final.csv?raw';
+import projectsCsvRaw from './data/projects.csv?raw';
 
 // Bulletproof RFC4180 CSV Parser
 function parseCSV(text) {
@@ -107,9 +108,39 @@ function loadNarrativePatterns() {
   return data;
 }
 
+// Parse Projects CSV (id, name, weblink, category, title)
+function loadProjects() {
+  const rawRows = parseCSV(projectsCsvRaw);
+  const data = [];
+
+  for (let i = 1; i < rawRows.length; i++) {
+    const row = rawRows[i];
+    if (!row || row.length < 5) continue;
+
+    const [id, name, weblink, category, title] = row;
+    if (!name || !title) continue;
+
+    // Some rows contain multiple links separated by blank lines; use the first valid one
+    const firstLink = (weblink || '')
+      .split('\n')
+      .map(l => l.trim())
+      .find(l => l.startsWith('http'));
+
+    data.push({
+      id: `project-${id || i}`,
+      name: name.trim(),
+      weblink: firstLink || '',
+      category: (category || '').replace(/\s+/g, ' ').trim(),
+      title: title.trim()
+    });
+  }
+  return data;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const interactiveData = loadInteractivePatterns();
   const narrativeData = loadNarrativePatterns();
+  const projectsData = loadProjects();
 
   const interactiveCategories = [...new Set(interactiveData.map(item => item.category))];
   const narrativeCategories = [...new Set(narrativeData.map(item => item.category))];
@@ -117,13 +148,18 @@ document.addEventListener('DOMContentLoaded', () => {
   // DOM Elements
   const viewHero = document.getElementById('view-hero');
   const viewPatterns = document.getElementById('view-patterns');
+  const viewProjects = document.getElementById('view-projects');
   const appNavbar = document.getElementById('app-navbar');
-  
+
   const navLogo = document.getElementById('nav-logo');
   const navHome = document.getElementById('nav-home');
   const navInteractive = document.getElementById('nav-interactive');
   const navNarrative = document.getElementById('nav-narrative');
   const navSketchnotes = document.getElementById('nav-sketchnotes');
+  const navProjects = document.getElementById('nav-projects');
+
+  const projectsSearchInput = document.getElementById('projects-search-input');
+  const projectsGrid = document.getElementById('projects-grid');
 
   const pageTitle = document.getElementById('patterns-page-title');
   const pageDesc = document.getElementById('patterns-page-desc');
@@ -376,19 +412,67 @@ document.addEventListener('DOMContentLoaded', () => {
   searchInput?.addEventListener('input', renderPatternsGrid);
   window.addEventListener('resize', renderPatternsGrid);
 
+  // Render Projects Card Grid
+  function renderProjectsGrid() {
+    if (!projectsGrid) return;
+
+    const searchQuery = (projectsSearchInput?.value || '').toLowerCase().trim();
+
+    const filteredProjects = projectsData.filter(item => {
+      return !searchQuery ||
+        item.name.toLowerCase().includes(searchQuery) ||
+        item.title.toLowerCase().includes(searchQuery) ||
+        item.category.toLowerCase().includes(searchQuery);
+    });
+
+    if (filteredProjects.length === 0) {
+      projectsGrid.innerHTML = `
+        <div class="empty-state">
+          <p>No projects found matching your search.</p>
+        </div>
+      `;
+      return;
+    }
+
+    projectsGrid.innerHTML = filteredProjects.map(item => `
+      <article class="project-card">
+        <div class="project-card-header">
+          <span class="project-card-author">${escapeHtml(item.name)}</span>
+          ${item.category ? `<span class="project-card-category">${escapeHtml(item.category)}</span>` : ''}
+        </div>
+        <h3 class="project-card-title">${escapeHtml(item.title)}</h3>
+        ${item.weblink
+          ? `<a href="${escapeHtml(item.weblink)}" class="project-card-link" target="_blank" rel="noopener noreferrer">View project &rarr;</a>`
+          : `<span class="project-card-link disabled">Coming soon</span>`}
+      </article>
+    `).join('');
+  }
+
+  projectsSearchInput?.addEventListener('input', renderProjectsGrid);
+
   // Router based on window hash
   function route() {
     const hash = window.location.hash || '#home';
 
-    [navHome, navInteractive, navNarrative, navSketchnotes].forEach(el => el?.classList.remove('active'));
+    [navHome, navInteractive, navNarrative, navSketchnotes, navProjects].forEach(el => el?.classList.remove('active'));
 
     if (hash === '#home' || hash === '' || hash === '#') {
       viewHero?.classList.add('active');
       viewPatterns?.classList.remove('active');
+      viewProjects?.classList.remove('active');
       if (appNavbar) appNavbar.style.display = 'none';
+    } else if (hash === '#projects') {
+      viewHero?.classList.remove('active');
+      viewPatterns?.classList.remove('active');
+      viewProjects?.classList.add('active');
+      if (appNavbar) appNavbar.style.display = 'flex';
+      navProjects?.classList.add('active');
+
+      renderProjectsGrid();
     } else {
       viewHero?.classList.remove('active');
       viewPatterns?.classList.add('active');
+      viewProjects?.classList.remove('active');
       if (appNavbar) appNavbar.style.display = 'flex';
 
       if (hash === '#narrative') {
